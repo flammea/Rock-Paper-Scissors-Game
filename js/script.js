@@ -60,6 +60,7 @@ var playerPointsElem = document.getElementById('js-playerPoints'),
     playerNameElem = document.getElementById('js-playerName'),
     computerPointsElem = document.getElementById('js-computerPoints');
 
+
  function newGame() {
   	player.name = prompt('Please enter your name', 'imię gracza');
   	if (player.name) {
@@ -89,16 +90,13 @@ var playerPickElem = document.getElementById('js-playerPick'),
     playerResultElem = document.getElementById('js-playerResult'),
     computerResultElem = document.getElementById('js-computerResult');
 
+
 function playerPick(playerPick) {
     var computerPick = getComputerPick();
 
     playerPickElem.innerHTML = playerPick;
     computerPickElem.innerHTML = computerPick;
-
-    checkRoundWinner(playerPick, computerPick);
 }
-
-playerPick();
 
 
 // Check Round Winner
@@ -127,12 +125,19 @@ function checkRoundWinner(playerPick, computerPick) {
     }
 
 }
+
+function playerPick(playerPick) {
+    var computerPick = getComputerPick();
+
+    playerPickElem.innerHTML = playerPick;
+    computerPickElem.innerHTML = computerPick;
+
+    checkRoundWinner(playerPick, computerPick);
+}
    
 
 // Current score
-
-function setGamePoints() {
+ function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score;
 }
-
