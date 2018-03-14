@@ -123,6 +123,7 @@ function checkRoundWinner(playerPick, computerPick) {
         computerResultElem.innerHTML = "Win!";
         computer.score++;
     }
+    setGamePoints();
 
 }
 
@@ -141,3 +142,14 @@ function playerPick(playerPick) {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score;
 }
+
+// The end
+function theEnd () {
+	if (player.score = 10) {
+	pickElem.innerHTML = "The winner is Player"; // zamienić opcje wyboru na końcowy napis
+	} else if (computer.score = 10) {
+	pickElem.innerHTML = "The winner is Computer";
+	}
+	setGameElements ('ended') //odpalić przycisk ze zmienionym napisem
+}
+
